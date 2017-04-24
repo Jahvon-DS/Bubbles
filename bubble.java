@@ -34,31 +34,31 @@ public class bubble
 */
 	
 		   public static void main(String[] args) {
-		       ArrayList<Integer> list = new ArrayList<Integer>();
-		       Random r = new Random();
+		       ArrayList<Integer> bubbleList = new ArrayList<Integer>();//importing allowing for use
+		       Random rand = new Random();// importing 
 		       for(int i=0; i<10; i++){
-		           list.add(r.nextInt(100)+1); //generating random number between 1 and 100
+		           bubbleList.add(rand.nextInt(100)+1); //generating random number between 1 and 100
 		       }
-		       System.out.println("Before sorting, list elements are: ");
-		       System.out.println(list);
-		       bubbleSort(list);
-		       System.out.println("After sorting, list elements are: ");
-		       System.out.println(list);
+		       System.out.println("Before sorting: ");
+		       System.out.println(bubbleList);
+		       bubbleSort(bubbleList);
+		       System.out.println("After sorting: ");
+		       System.out.println(bubbleList);
 		      
 		   }
 		   public static void bubbleSort(ArrayList<Integer> list) {
 		  
-		int n = list.size();
-		int temp = 0;
+		int sizeOf = list.size();
+		int num = 0;
 
-		for(int i=0; i < n; i++){
-		for(int j=1; j < (n-i); j++){
+		for(int i=0; i < sizeOf; i++){
+		for(int j=1; j < (sizeOf-i); j++){
 
 		if(list.get(j-1) > list.get(j)){
 		//swap the elements!
-		temp = list.get(j-1);
+		num = list.get(j-1);
 		list.set(j-1 , list.get(j));
-		list.set(j, temp);
+		list.set(j, num);
 		}
 
 		}
